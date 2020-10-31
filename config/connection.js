@@ -1,14 +1,19 @@
 const mysql = require('mysql');
 
-const databaseConfig = {
+const connection = mysql.createConnection({
     host: "localhost",
+    port: 3306,
     user: "root",
     password: "bootcamp",
-    database: "content_management_systems_db"
-};
-
-const pool = mysql.createPool(databaseConfig);
-
-module.exports = {
-    pool
-}
+    database: "burgers_db"
+  });
+  
+  connection.connect((err) => {
+    if (err) {
+      console.error("error connecting: " + err.stack);
+      return;
+    }
+    console.log("connected as id " + connection.threadId);
+  });
+  
+  module.exports = connection;
