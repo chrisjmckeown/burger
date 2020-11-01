@@ -1,20 +1,158 @@
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
+/********** Colour reference chart*********
+*************************** colour *******/ 
+:root {
+  --blue: rgb(78, 125, 155);
+  --light-blue: rgb(108, 167, 204);
+  --grey: rgb(161,164,167);
+  --green: rgb(79,173,67);
+  --brown: rgb(195, 110, 41);
+}
+
+/* setting body background */
+html,body{
+  color: black;
+  background: rgb(235, 235, 235) ;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Muli', sans-serif;
+}
+.header, .main, .footer { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+}
+
+/* styling the header */
+.header{
+  background-color:var(--blue);
+  flex: 0 1 auto;
+  width: 100%;
+}
+.header H1{
+  text-align: center;
+  color: white;
+  width: 100%;
+  font-size: 35px;
+}
+/* styling the main */
+.main{  
+  flex: 1 1 auto;
+  background-color: white;
+  width: 100%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.col1{
+  flex-basis: 40%;
+  padding: 10px;
+  border-top: 1px solid var(--green);
+  box-sizing: border-box;
+
+}
+
+.col2{
+  flex-basis:40%;
+  padding: 10px;
+  border-top: 1px solid var(--green);
+  box-sizing: border-box;
+}
+
+.burger-name, .form-group{
+  margin-bottom: 10px;
+}
+
+.burger-add, .burger-devoured{
+  background-color: var(--brown);
+  border: var(--brown);
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+} 
+
+.burger-add:hover, .burger-devoured:hover{
+  background-color: var(--green);
+  border: var(--green);
+}
+
+.burger-list{
+  list-style-type: none;
+  padding: 0;
+}
+
+.create-form .name{
+  display: flex;
+}
+
+.burger_name{
+  flex: 1;
+}
+
+/* styling the footer */
+.footer{
+  flex: 0 1 auto;
+  width: 100%;
+}
+
+/* setting footer styles */
+.footer .copyright-social-media {
+  margin: 0 auto;
+  height: 40px;
+  background-color:rgb(78, 125, 155);
+  display: flex;
+  justify-content: center; /* For horizontal alignment */
+  align-items: center; /* For vertical alignment */
+}
+
+/* social media div */
+.footer, .footer .copyright-social-media a{
+  font-size: 20px;
+  color: white;
+}
+.footer .copyright-social-media a{
+  padding-left: 10px;
+  text-decoration: none;
+}
+.footer .copyright-social-media a:hover{
+  color: var(--green);
+}
+/* media query for 768 and smaller screens */
+/* reducing margins */
+@media(max-width:768px) {
+  .header .name h1{
+      margin: 2px;
+  } 
+  /* social media div */
+  .footer, .footer .copyright-social-media a{
+      font-size: 15px;
+      color: white;
   }
-  
-  .label {
-    font-weight: bold;
+}
+
+/* media query for 400 and smaller screens */
+/* Removing margin and setting width to full screen */
+@media(max-width:650px) {
+  html,body{
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
   }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
+  .main-body, .portfolio-container{
+      width: 95%;
   }
-  
-  .form-group {
-    margin-bottom: 5px;
+  /* social media div */
+  .footer, .footer .copyright-social-media a{
+      font-size: 15px;
+      color: white;
   }
-  
+}

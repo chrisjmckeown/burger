@@ -4,7 +4,7 @@ const burger = require('../models/burger.js');
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    burger.all((result) => {
+    burger.selectAll((result) => {
         const hbsObject = {
             burgers: result
         };
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-    burger.create([
+    burger.insertOne([
         "burger_name", "devoured"
     ], [
         req.body.burger_name, req.body.devoured
@@ -26,7 +26,7 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
     const condition = "id = " + req.params.id;
     
-    burger.update({ devoured: req.body.devoured },
+    burger.updateOne({ devoured: req.body.devoured },
         condition, (result) => {
             if (result.changedRows == 0) {
                 // If no rows were changed, then the ID must not exist, so 404

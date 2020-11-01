@@ -23,7 +23,7 @@ function objToSql(ob) {
 }
 
 var orm = {
-    all: (table, cb) => {
+    selectAll: (table, cb) => {
         var queryString = "SELECT * FROM " + table;
         connection.query(queryString, function (err, result) {
             if (err) {
@@ -32,7 +32,7 @@ var orm = {
             cb(result);
         });
     },
-    create: (table,cols, vals, cb) => {
+    insertOne: (table,cols, vals, cb) => {
         var queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -49,7 +49,7 @@ var orm = {
             cb(result);
         });
     },
-    update: (table, objColVals, condition, cb) => {
+    updateOne: (table, objColVals, condition, cb) => {
         var queryString = "UPDATE "+ table;
 
         queryString += " SET ";
