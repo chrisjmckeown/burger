@@ -71,8 +71,8 @@ html,body{
   margin-bottom: 10px;
 }
 
-.burger-add, .burger-devoured{
-  font-size: 1rem;
+button{
+  font-size: .7rem;
   background-color: var(--brown);
   border: none;
   outline:none;
@@ -83,7 +83,7 @@ html,body{
   margin-bottom: 5px;
 } 
 
-.burger-add:hover, .burger-devoured:hover{
+button:hover{
   background-color: var(--green);
   border: var(--green);
 }
@@ -109,16 +109,21 @@ html,body{
 
 .namecol{
   box-sizing: border-box;
-  flex-basis:78%;
+  flex-basis:65%;
+}
+
+.editcol{
+  box-sizing: border-box;
+  flex-basis:15%;
 }
 
 .deletecol{
   box-sizing: border-box;
-  flex-basis:20%;
+  flex-basis:15%;
 }
 
 .devoured{
-  font-size: 1rem;
+  font-size: .8rem;
   padding: 5px;
   margin-bottom: 5px;
 }
