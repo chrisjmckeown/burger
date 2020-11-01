@@ -20,6 +20,11 @@ var burger = {
     orm.delete("burgers", condition, (res) => {
       cb(res);
     });
+  },
+  deleteall : function (cb) {
+    orm.deleteall("burgers", (res) => {
+      cb(res);
+    });
   }
 };
 

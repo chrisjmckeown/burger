@@ -1,13 +1,19 @@
 <li class="burger-name">
 	{{#if devoured}}
-	<button class="burger-devoured" data-id="{{id}}" data-changedevoured="{{devoured}}">
-		{{burger_name}}
-	</button>
+	<div class="namecol">
+		<button class="burger-devoured" data-id="{{id}}" data-changedevoured="{{devoured}}">
+			{{burger_name}} added: {{prettifyDate date_created}}
+		</button>
+	</div>
 	{{else}}
-		{{burger_name}}
+	<div class="namecol devoured">
+		{{burger_name}} devoured: {{prettifyDate date_devoured}}
+	</div>
 	{{/if}}
-	
-	{{!-- <button class="delete" data-id="{{id}}">
-		DELETE
-	</button> --}}
+
+	<div class="deletecol">
+		<button class="burger-devoured delete" data-id="{{id}}">
+			DELETE
+		</button>
+	</div>
 </li>

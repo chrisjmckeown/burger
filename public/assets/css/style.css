@@ -72,12 +72,15 @@ html,body{
 }
 
 .burger-add, .burger-devoured{
+  font-size: 1rem;
   background-color: var(--brown);
-  border: var(--brown);
+  border: none;
+  outline:none;
   border-radius: 10px;
   padding: 5px;
   width: 100%;
   cursor: pointer;
+  margin-bottom: 5px;
 } 
 
 .burger-add:hover, .burger-devoured:hover{
@@ -94,8 +97,30 @@ html,body{
   display: flex;
 }
 
+.burger-name{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+}
+
 .burger_name{
   flex: 1;
+}
+
+.namecol{
+  box-sizing: border-box;
+  flex-basis:78%;
+}
+
+.deletecol{
+  box-sizing: border-box;
+  flex-basis:20%;
+}
+
+.devoured{
+  font-size: 1rem;
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 /* styling the footer */

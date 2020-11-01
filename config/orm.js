@@ -57,6 +57,8 @@ var orm = {
         queryString += " WHERE ";
         queryString += condition;
 
+        console.log(queryString);
+
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -68,6 +70,17 @@ var orm = {
       var queryString = "DELETE FROM " + table;
       queryString += " WHERE ";
       queryString += condition;
+  
+      connection.query(queryString, (err, result) => {
+        if (err) {
+          throw err;
+        }
+        cb(result);
+      });
+    },
+    deleteall: function (table, cb) {
+      var queryString = "DELETE FROM " + table;
+      console.log(queryString);
   
       connection.query(queryString, (err, result) => {
         if (err) {
