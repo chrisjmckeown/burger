@@ -47,7 +47,7 @@ The app puts burgers in two lists, those to eat on the left, and those devoured 
 * Delete a burger in either list if a mistake was made.
 * Clear all burgers to start from scratch!
 
-<img src="./public/assets/img/Burger.png" alt="Burger Logger image"> 
+<img src="./public/assets/img/burger.png" alt="Burger Logger image"> 
 
 ### Heroku Deployment
 
