@@ -7,3 +7,13 @@ VALUES
   ("Pulled Pork", TRUE, "2020-10-25 12:00:00");
 
 SELECT * FROM burgers;
+
+USE ua221ra4v05pm2ev;
+INSERT INTO
+  burgers (burger_name, devoured, date_devoured)
+VALUES
+  ("Chicken", FALSE, "2020-11-21 12:00:00"),
+  ("BEEF", TRUE, "2020-11-01 12:00:00"),
+  ("Pulled Pork", TRUE, "2020-10-25 12:00:00");
+
+SELECT * FROM burgers;
