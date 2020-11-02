@@ -9,14 +9,18 @@ router.get("/", (req, res) => {
         const hbsObject = {
             burgers: data
         };
-        res.render("index", hbsObject);
+        return res.render("index", hbsObject);
     });
 });
 
 router.get("/:id", (req, res) => {
     const condition = "id = " + req.params.id;
+    if (req.params.id === "favicon.ico") {
+        console.log(req.params.id);
+        return;
+    }
     burger.selectOne(condition, (data) => {
-        res.render("update-burger", data[0]);
+        return res.render("update-burger", data[0]);
     });
 });
 
@@ -25,36 +29,36 @@ router.post("/api/burgers", (req, res) => {
     burger.insertOne([
         "burger_name", "devoured", "date_devoured"
     ], [
-        req.body.burger_name, req.body.devoured, date 
+        req.body.burger_name, req.body.devoured, date
     ], (result) => {
         // Send back the ID of the new quote
-        res.json({ id: result.insertId });
+        return res.json({ id: result.insertId });
     });
 });
 
 router.put("/api/burgers/devoured/:id", (req, res) => {
     const condition = "id = " + req.params.id;
     const date = moment().format("yyyy-MM-DD h:mm:ss");
-    burger.updateOne({devoured: req.body.devoured, date_devoured: date },
+    burger.updateOne({ devoured: req.body.devoured, date_devoured: date },
         condition, (result) => {
             if (result.changedRows == 0) {
                 // If no rows were changed, then the ID must not exist, so 404
                 return res.status(404).end();
             } else {
-                res.status(200).end();
+                return res.status(200).end();
             }
         });
 });
 
 router.put("/api/burgers/namechange/:id", (req, res) => {
     const condition = "id = " + req.params.id;
-    burger.updateOne({burger_name: req.body.burger_name},
+    burger.updateOne({ burger_name: req.body.burger_name },
         condition, (result) => {
             if (result.affectedRows == 0) {
                 // If no rows were changed, then the ID must not exist, so 404
                 return res.status(404).end();
             } else {
-                res.status(200).end();
+                return res.status(200).end();
             }
         });
 });
@@ -64,7 +68,7 @@ router.delete("/api/burgers/deleteall", (req, res) => {
         if (result.affectedRows == 0) {
             return res.status(404).end();
         } else {
-            res.status(200).end();
+            return res.status(200).end();
         }
     });
 });
@@ -75,7 +79,7 @@ router.delete("/api/burgers/:id", (req, res) => {
         if (result.affectedRows == 0) {
             return res.status(404).end();
         } else {
-            res.status(200).end();
+            return res.status(200).end();
         }
     });
 });

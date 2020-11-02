@@ -1,24 +1,20 @@
-<li class="burger-name">
-	{{#if devoured}}
+<li class="burger-item">
 	<div class="namecol">
-		<button class="burger-devoured" data-id="{{id}}" data-changedevoured="{{devoured}}">
-			{{burger_name}} added: {{prettifyDate date_created}}
+		{{#if devoured}}
+		<button class="burger-devoure" data-id="{{id}}" data-changedevoured="{{devoured}}">
+			<div class="button-text">{{burger_name}} <br>Added: {{prettifyDate date_created}}</div>
 		</button>
+		{{else}}
+		<div class="devoured">{{burger_name}}<br>Devoured: {{prettifyDate date_devoured}}</div>
+		{{/if}}
 	</div>
-	{{else}}
-	<div class="namecol devoured">
-		{{burger_name}} devoured: {{prettifyDate date_devoured}}
-	</div>
-	{{/if}}
 
 
 	<div class="editcol">
-		<button class="edit" data-id="{{id}}">
+		<button class="burger-edit" data-id="{{id}}">
 			EDIT
 		</button>
-	</div>
-	<div class="deletecol">
-		<button class="delete" data-id="{{id}}">
+		<button class="burger-delete" data-id="{{id}}">
 			DELETE
 		</button>
 	</div>

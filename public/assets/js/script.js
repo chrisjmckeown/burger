@@ -1,6 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-    $(".burger-devoured").on("click", function (event) {
+    $(".burger-devoure").on("click", function (event) {
         const id = $(this).data("id");
         const changeDevoured = $(this).data("changedevoured");
 
@@ -19,12 +19,13 @@ $(function () {
         );
     });
 
-    $(".edit").on("click", function (event) {
+    $(".burger-edit").on("click", function (event) {
         const id = $(this).data("id");
+        console.log("edit");
         window.location.href = `/${id}`;
     });
 
-    $(".update-form").on("submit", function (event) {
+    $(".burger-rename").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
@@ -49,7 +50,7 @@ $(function () {
         }
     });
 
-    $(".create-form").on("submit", function (event) {
+    $(".burger-create").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
@@ -73,7 +74,7 @@ $(function () {
         }
     });
 
-    $(".delete").on("click", function (event) {
+    $(".burger-delete").on("click", function (event) {
         const id = $(this).data("id");
 
         // Send the DELETE request.
@@ -87,7 +88,7 @@ $(function () {
         );
     });
 
-    $(".clear-all").on("click", function (event) {
+    $(".burger-delete-all").on("click", function (event) {
         // Send the DELETE request.
         $.ajax("/api/burgers/deleteall", {
             type: "DELETE"

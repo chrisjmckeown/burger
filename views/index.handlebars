@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col1">
+  <div class="col40">
     <h2 class="burger-label">Eat ME!</h2>
     <ul class="burger-list">
       {{#each burgers}}
@@ -9,7 +9,7 @@
       {{/each}}
     </ul>
   </div>
-  <div class="col2">
+  <div class="col40">
     <h2 class="burger-label">Devoured!</h2>
     <ul class="burger-list">
       {{#each burgers}}
@@ -21,9 +21,9 @@
   </div>
 </div>
 <div class="row">
-  <div class="col1">
+  <div class="col40">
     <h2>Add a Burger</h2>
-    <form class="create-form">
+    <form class="burger-create">
 
       <div class="form-group name">
         <label for="burger_name">Burger Name:</label>
@@ -34,10 +34,10 @@
         <label for="devoured">Devoured?</label>
 
         <div class="row">
-          <div class="col1">
+          <div class="col40">
             <input type="radio" class="radio" name="devoured" value="0" checked> Ready to eat
           </div>
-          <div class="col2">
+          <div class="col40">
             <input type="radio" name="devoured" value="1"> Devoured!
           </div>
         </div>
@@ -46,6 +46,6 @@
       <button class="burger-add" type="submit">Add Burger</button>
     </form>
 
-    <button class="clear-all">Clear all</button>
+    <button class="burger-delete-all">Delete all</button>
   </div>
 </div>
