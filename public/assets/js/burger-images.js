@@ -6,7 +6,6 @@ let slideIndex = 1;
 for (var i = 1; i < 5 + 1; i++) {
     createImage(i);
 }
-
 function createImage(count) {
     $.ajax({
         url: queryURL,
@@ -39,7 +38,7 @@ function showSlides(n) {
     Array.prototype.forEach.call(slides, element => {
         element.style.display = "none";
     });
-    Array.prototype.forEach.call(slides, element => {
+    Array.prototype.forEach.call(dots, element => {
         element.className = element.className.replace(" active", "");
     });
     slides[slideIndex - 1].style.display = "block";
