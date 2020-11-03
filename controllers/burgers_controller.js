@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// get a s
 router.get("/:id", (req, res) => {
     const condition = "id = " + req.params.id;
     if (req.params.id === "favicon.ico") {
@@ -24,6 +25,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// create a new burger
 router.post("/api/burgers", (req, res) => {
     const date = moment().format("yyyy-MM-DD h:mm:ss");
     burger.insertOne([
@@ -36,6 +38,7 @@ router.post("/api/burgers", (req, res) => {
     });
 });
 
+// updates a burget to be devoured and set the devoured date
 router.put("/api/burgers/devoured/:id", (req, res) => {
     const condition = "id = " + req.params.id;
     const date = moment().format("yyyy-MM-DD h:mm:ss");
@@ -50,6 +53,7 @@ router.put("/api/burgers/devoured/:id", (req, res) => {
         });
 });
 
+// updates the burger name is inputted incorrect first time
 router.put("/api/burgers/namechange/:id", (req, res) => {
     const condition = "id = " + req.params.id;
     burger.updateOne({ burger_name: req.body.burger_name },
@@ -63,6 +67,7 @@ router.put("/api/burgers/namechange/:id", (req, res) => {
         });
 });
 
+// delete all burgers to start again
 router.delete("/api/burgers/deleteall", (req, res) => {
     burger.deleteall((result) => {
         if (result.affectedRows == 0) {
@@ -73,6 +78,7 @@ router.delete("/api/burgers/deleteall", (req, res) => {
     });
 });
 
+// delete a specific burger
 router.delete("/api/burgers/:id", (req, res) => {
     const condition = "id = " + req.params.id;
     burger.delete(condition, (result) => {

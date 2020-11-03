@@ -36,6 +36,10 @@ html,body{
   width: 100%;
   font-size: 35px;
 }
+
+.cool-font {
+  font-family: 'Turret Road', cursive;
+}
 /* styling the main */
 .main{  
   flex: 1 1 auto;
@@ -65,13 +69,13 @@ html,body{
 }
 
 .devoured{
-  font-size: .7rem;
+  font-size: .8rem;
   padding: 5px;
   margin-bottom: 5px;
 }
 
 button{
-  font-size: .7rem;
+  font-size: .9rem;
   padding: 5px;
   margin-bottom: 5px;
   background-color: var(--brown);
@@ -114,7 +118,7 @@ button:hover{
 
 .namecol{
   box-sizing: border-box;
-  flex-basis:80%;
+  flex-basis:78%;
   margin-bottom: 2px;
   border: 1px solid var(--brown);
   border-radius: 10px;
@@ -122,7 +126,7 @@ button:hover{
 
 .editcol{
   box-sizing: border-box;
-  flex-basis:15%;
+  flex-basis:20%;
 }
 
 /* styling the footer */
@@ -182,4 +186,12 @@ button:hover{
       font-size: 15px;
       color: white;
   }
+}
+
+.tooltiptext {
+  visibility: hidden;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

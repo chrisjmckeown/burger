@@ -2,7 +2,11 @@
 	<div class="namecol">
 		{{#if devoured}}
 		<button class="burger-devoure" data-id="{{id}}" data-changedevoured="{{devoured}}">
-			<div class="button-text">{{burger_name}} <br>Added: {{prettifyDate date_created}}</div>
+			<div class="tooltip">
+				<div class="button-text">{{burger_name}} <br>Added: {{prettifyDate date_created}}</div>
+
+				<span class="tooltiptext">Click to devour</span>
+			</div>
 		</button>
 		{{else}}
 		<div class="devoured">{{burger_name}}<br>Devoured: {{prettifyDate date_devoured}}</div>
@@ -12,10 +16,10 @@
 
 	<div class="editcol">
 		<button class="burger-edit" data-id="{{id}}">
-			EDIT
+			<i class="far fa-edit"></i>
 		</button>
 		<button class="burger-delete" data-id="{{id}}">
-			DELETE
+			<i class="far fa-trash-alt"></i>
 		</button>
 	</div>
 </li>

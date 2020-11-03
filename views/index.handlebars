@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col40">
-    <h2 class="burger-label">Eat ME!</h2>
+    <h2 class="burger-label cool-font"><i class="fas fa-utensils"></i>  Eat ME!</h2>
     <ul class="burger-list">
       {{#each burgers}}
       {{#unless devoured}}
@@ -10,7 +10,7 @@
     </ul>
   </div>
   <div class="col40">
-    <h2 class="burger-label">Devoured!</h2>
+    <h2 class="burger-label cool-font">Devoured!</h2>
     <ul class="burger-list">
       {{#each burgers}}
       {{#if devoured}}
@@ -22,7 +22,7 @@
 </div>
 <div class="row">
   <div class="col40">
-    <h2>Add a Burger</h2>
+    <h2 class=" cool-font">Add a Burger</h2>
     <form class="burger-create">
 
       <div class="form-group name">
@@ -34,12 +34,8 @@
         <label for="devoured">Devoured?</label>
 
         <div class="row">
-          <div class="col40">
             <input type="radio" class="radio" name="devoured" value="0" checked> Ready to eat
-          </div>
-          <div class="col40">
             <input type="radio" name="devoured" value="1"> Devoured!
-          </div>
         </div>
       </div>
 
