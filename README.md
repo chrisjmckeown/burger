@@ -51,7 +51,7 @@ The app puts burgers in two lists, those to eat on the left, and those devoured 
 
 ### Heroku Deployment
 
-View the deployed app here: https://agile-badlands-99229.herokuapp.com/
+View the deployed app here: https://dreadful-mausoleum-22058.herokuapp.com/
 
 ## License
  
